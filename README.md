@@ -14,7 +14,7 @@ Bootstrap
 
 # Demonstração
 
-<p>Confira o <a href="https://eduardopezzi01.github.io/Desafio-2---soundgarden-front-main/" target="_blank">CodeCamp</a>.</p>
+<p>Confira o <a href="https://eduardopezzi01.github.io/soundgarden-front-main---Desafio-2-GamaAcademy-main/">CodeCamp</a>.</p>
 
 
 # Autores
