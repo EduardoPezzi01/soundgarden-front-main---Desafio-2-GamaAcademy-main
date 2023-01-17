@@ -1,15 +1,18 @@
 const divEventos = document.querySelector("#eventos")
+const banner = document.querySelector("#banner")
+
+
 
 const getEvents = async(eventos) => {    
     const events = await fetch(`${BASE_URL}/events`).then((result) => 
         result.json()
         )
 
-        events.forEach((event) => {
-            const ids = event._id
-            console.log(ids)
-        })
-
+        // events.forEach((event) => {
+        //     const ids = event._id
+        //     console.log(ids)
+        // })
+        
     events
     .sort((eventoA, eventoB) => eventoA.scheduled - eventoB.scheduled)
     .slice(0, 3)
@@ -25,12 +28,53 @@ const getEvents = async(eventos) => {
         divEventos.appendChild(article)
     });
 
+    // const carrossel = (fotos) => {
+    //     let idx
+    //     idx++
+    //     if (idx > fotos.length -1){
+    //         idx = 0
+    //     }
+    //     banner.innerHTML = `${idx}`
+    // }
+    
+
+        const imgs = []
+        events.forEach ((event) => {
+            imgs.push(event.poster)
+
+        })
+
+        imgs.forEach(imagem => {
+                let imgCreate = document.createElement("img")    
+                imgCreate.src = imagem
+                banner.appendChild(imgCreate)
+
+        })
+
+        let imgem = document.querySelectorAll(['img'])
+
+        imgem.forEach((m) => m.classList.add('bannerInvisible'))
+        let i = 0
+        setInterval(function(){
+            i++
+            imgem[i].classList.add('bannerVisible');
+        }, 2000)
+
+
+
+
+
+
+    
+    
+
+
+
+
     // events.forEach((event) => {
     //     const ids = event._id
     //     console.log(ids)
     // })
-
-
 
     // const idd = document.getElementsByClassName('idd');
     // // for (let idx, i = 0; i < idd.length; i++) {
@@ -74,10 +118,6 @@ const toggleModal = () => {
 closeModal.addEventListener("click", () => toggleModal()) 
 fade.addEventListener("click", () => toggleModal()) 
 
-// [closeModal, fade].forEach((elemento) => {
-//     elemento.addEventListener("click", () => toggleModal())
-// })
-
 
 const emailUsuario = document.querySelector("#email")
 const nomeUsuario = document.querySelector("#nome")
@@ -113,8 +153,6 @@ formModal.addEventListener("submit", (event) => {
 
 })
 
-const idReserva = document.querySelector("#idReserva")
-idReserva.textContent = 'fsafasas'
 
 }
 
@@ -122,3 +160,4 @@ idReserva.textContent = 'fsafasas'
 divEventos.appendChild(modal)
 
 getEvents()
+
