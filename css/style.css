@@ -134,3 +134,12 @@ footer nav ul li  {
     margin-bottom: 1rem;
     padding: .375rem .75rem;
 }
+
+.bannerInvisible{
+    display: none
+}
+
+.bannerVisible {
+    display: block
+}
+

@@ -14,7 +14,7 @@ modal.innerHTML = `
             <input required id="email" type="email" placeholder="digite seu e-mail">
             <label for="nome">Nome:</label>
             <input required id="nome" type="text" placeholder="qual o seu nome?">
-            <input id="idReserva">
+
             <button type="submit">Reservar</button>     
         </form>
     </div>
